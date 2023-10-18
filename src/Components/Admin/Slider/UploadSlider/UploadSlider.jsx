@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
-import { global_getBase64 } from "../../../helper";
+import { global_getBase64 } from "../../../../helper";
 import { Button } from "react-bootstrap";
 import axios from "axios";
 

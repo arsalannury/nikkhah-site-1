@@ -1,10 +1,13 @@
 import React from 'react'
-import UploadSlider from './UploadSlider/UploadSlider'
+import UploadSlider from './Slider/UploadSlider/UploadSlider';
+import AdminHeader from './AdminHeader/AdminHeader';
+
 
 const Dashboard = () => {
   return (
-      <>
-      <UploadSlider />
+    <>
+      <AdminHeader />
+       
       </>
   )
 }
