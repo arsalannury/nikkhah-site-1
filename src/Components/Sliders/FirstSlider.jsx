@@ -1,26 +1,40 @@
-import React from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
 
 const FirstSlider = () => {
+  const [sliderData, setSliderData] = useState(null);
+
+  const getData = async () => {
+    try {
+      const service = await axios.get("http://localhost:4000/firstSlider");
+      setSliderData(service.data);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <>
       <Carousel>
-        <Carousel.Item>
-          <img src="sliderImage1.webp" alt="" 
-          className="object-fit-cover w-100" />
-          <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img src="sliderImage2.webp" alt="" 
-          className="object-fit-cover w-100" />
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
+        {sliderData &&
+          sliderData.map((data) => (
+              <Carousel.Item key={data.id}>
+                <img
+                  src={data.sliderImg}
+                  alt=""
+                  className="w-100 object-fit-cover"
+                />
+                <Carousel.Caption>
+                  <h3>{data.sliderTitle}</h3>
+                  <p>{data.sliderDesc}</p>
+                </Carousel.Caption>
+              </Carousel.Item>
+          ))}
       </Carousel>
     </>
   );

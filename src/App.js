@@ -1,13 +1,16 @@
 import React from 'react';
-import Header from './Components/Header/Header';
-import FirstSlider from './Components/Sliders/FirstSlider';
+import { Routes, Route } from 'react-router-dom';
+import Dashboard from './Components/Admin/Dashboard';
+import Home from './Components/Home/Home';
 
 
 const App = () => {
   return (
       <>
-      <Header />
-      <FirstSlider />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/admin/dashboard' element={<Dashboard />} />
+      </Routes>
       </>
   )
 }
