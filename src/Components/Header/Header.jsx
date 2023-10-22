@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import "./header.css"
 
 const Header = () => {
   return (
@@ -23,9 +24,9 @@ const Header = () => {
               <Nav.Link className="text-white" href="#link">
                 درباره ی فناپ
               </Nav.Link>
-              <NavDropdown title="منو" id="basic-nav-dropdown" className="text-white">
-                <NavDropdown.Item href="#action/3.1">شرکت ها</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">پروژه ها</NavDropdown.Item>
+              <NavDropdown title="منو" id="basic-nav-dropdown" className="dropdown">
+                <NavDropdown.Item className="text-right" href="#action/3.1">شرکت ها</NavDropdown.Item>
+                <NavDropdown.Item className="text-right" href="#action/3.2">پروژه ها</NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
