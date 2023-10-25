@@ -29,6 +29,9 @@ const AdminHeader = () => {
                 <NavDropdown.Item>
                   <Link to={"/admin/dashboard/edit-slider"}>ویرایش</Link>
                 </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <Link to={"/admin/dashboard/show-slider"}>مشاهده</Link>
+                </NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
